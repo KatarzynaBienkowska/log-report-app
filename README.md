@@ -1,74 +1,60 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Log Report App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The application allows the user to save a log report with a name and an email in a database. The log can have any number of lines. Each line begins with either E for errors, W for warnings and I for informational messages. Error messages then have a number indicating the severity of the error (1-100). All types of messages then have an integer timestamp and a textual content which runs until the end of the line. Example valid lines:
 
-## Available Scripts
+```
+I 6 Nothing to report
+W 7 Out for lunch
+E 42 21 ERROR: Something has gone horribly wrong
+I 52 Something went wrong while I was out for lunch
+```
+Log lines are validated to the template, sorted with the timestamps in ascending order and inserted into a database. User can search for any user logs and receive only error messages with severity of at least 50.
 
-In the project directory, you can run:
+The frontend is implemented in React and connected to an API written in Node.js. A data are saved in MongoDB.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
+- Install [Node.js](https://nodejs.org/en/) version 16.18.0
+- Create Database & Collection & Database User & Connection String in [MongoDB](https://www.mongodb.com/)
+
+## Getting started
+
+- Clone repository
+```
+git clone https://github.com/KatarzynaBienkowska/log-report-app.git
+```
+- Install dependencies
+
+In first terminal:
+```
+cd backend
+npm install
+```
+In second terminal:
+```
+cd frontend
+npm install
+```
+- Set environment variables in backend folder
+```
+DATABASE_URI={Connection String to MongoDB}
+```
+## Run application
+In both terminals:
+```
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can also run backend in a development mode using nodemon:
+```
+npm run dev
+```
 
-### `npm test`
+## Run tests
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# log-report-app
->>>>>>> 83fd138f480d9ed0db9f31a0127a2585795a2b4d
+For both frontend and backend tests:
+```
+npm test
+```
