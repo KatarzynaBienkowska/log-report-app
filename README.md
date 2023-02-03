@@ -10,7 +10,7 @@ I 52 Something went wrong while I was out for lunch
 ```
 Log lines are validated to the template, sorted with the timestamps in ascending order and inserted into a database. User can search for any user logs and receive only error messages with severity of at least 50.
 
-The frontend is implemented in React and connected to an API written in Node.js. A data are saved in MongoDB.
+The frontend is implemented in React and connected to an API written in Node.js. The data are saved in MongoDB.
 
 ## Prerequisites
 
